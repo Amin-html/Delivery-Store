@@ -1,6 +1,8 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:8000/api';
+// Используем переменную окружения, если она есть (на Vercel), 
+// иначе падаем на localhost (для локальной разработки)
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000/api';
 
 // Create axios instance
 const api = axios.create({
@@ -49,4 +51,4 @@ api.interceptors.request.use(
   }
 );
 
-export default api; 
+export default api;
