@@ -64,7 +64,9 @@ MIDDLEWARE = [
 ]
 
 # CORS settings
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOWED_ORIGINS = [
+    "https://delivery-store-pi.vercel.app",
+]
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_HEADERS = [
     'accept',
@@ -76,6 +78,9 @@ CORS_ALLOW_HEADERS = [
     'user-agent',
     'x-csrftoken',
     'x-requested-with',
+]
+CSRF_TRUSTED_ORIGINS = [
+    "https://delivery-store-pi.vercel.app",
 ]
 
 ROOT_URLCONF = 'delivery_store.urls'
